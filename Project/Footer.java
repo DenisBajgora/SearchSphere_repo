@@ -5,12 +5,26 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Footer extends JPanel {
-    JLabel copyrightLabel;
-    Footer() {
-        copyrightLabel = new JLabel("Denis © 2024 Copyright Reserved");
-        this.setBackground(new Color(0x212121));
+    private JLabel copyrightLabel;
+
+    // Define constants for component configuration
+    private static final Color BACKGROUND_COLOR = new Color(0x212121);
+    private static final Dimension PREFERRED_SIZE = new Dimension(0, 25);
+    private static final String COPYRIGHT_TEXT = "Denis © 2024 Copyright Reserved";
+
+    /**
+     * Constructor for Footer. Initializes the panel with a copyright label.
+     */
+    public Footer() {
+        // Initialize the copyright label with text
+        copyrightLabel = new JLabel(COPYRIGHT_TEXT);
+
+        // Set the background color, layout, and preferred size of the panel using constants
+        this.setBackground(BACKGROUND_COLOR);
         this.setLayout(new FlowLayout());
-        this.setPreferredSize(new Dimension(0,25));
+        this.setPreferredSize(PREFERRED_SIZE);
+
+        // Add the copyright label to the panel
         this.add(copyrightLabel);
     }
 }

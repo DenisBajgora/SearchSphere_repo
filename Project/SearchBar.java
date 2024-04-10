@@ -14,13 +14,13 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-public class SearchPanel extends JPanel {
+public class SearchBar extends JPanel {
 
     JTextField textfield = new JTextField();
     private ArrayList<String> currentPathToFolder;
     private JTextArea textArea;
 
-    SearchPanel(ArrayList<String> currentPathToFolder,JTextArea textArea) {
+    SearchBar(ArrayList<String> currentPathToFolder,JTextArea textArea) {
         setCurrentPathToFolder(currentPathToFolder);
         setTextArea(textArea);
         this.setBackground(new Color(0x212121));
@@ -43,9 +43,11 @@ public class SearchPanel extends JPanel {
                     textArea.setText("Select a Folder!");
                     return;
                 }
+                if (textfield.getText().isEmpty()) {
+                    return;
+                } 
                 searchForWord();
 
-                
                 // Clear the textfield for new input
                 textfield.setText("");
             }
