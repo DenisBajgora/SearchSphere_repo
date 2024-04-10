@@ -79,7 +79,7 @@ public class SearchBar extends JPanel {
          
         for (File file : listOfFiles) {
             // Check if the file is a text file
-            if (!(file.isFile() && file.getName().endsWith(".txt"))) { continue; }
+            if (!(file.isFile())) { continue; }
         
             System.out.println("Opening file: " + file.getName());
             TextFileDetails textFileDetails = new TextFileDetails();
@@ -111,19 +111,36 @@ public class SearchBar extends JPanel {
 
     private static int countOccurrences(String line, String word_or_phrase) {
         // Adjust case to make search case-insensitive
-        String tempLine = line.toLowerCase();
+        String tempLine = " " + line.toLowerCase() + " "; // Added spaces to handle start and end of line
         String tempWord = word_or_phrase.toLowerCase();
-
+    
         // Count occurrences
         int occurrences = 0;
         int index = 0;
         while ((index = tempLine.indexOf(tempWord, index)) != -1) {
-            occurrences++;
+            
+            // Check if the character before and after the word are not letters (ensures standalone word)
+            boolean isStandaloneWord = true;
+            
+            if (index > 0 && Character.isLetter(tempLine.charAt(index - 1))) {
+                // Character before the word is a letter, not a standalone word
+                isStandaloneWord = false;
+            }
+            
+            int endIndex = index + tempWord.length();
+            if (endIndex < tempLine.length() && Character.isLetter(tempLine.charAt(endIndex))) {
+                // Character after the word is a letter, not a standalone word
+                isStandaloneWord = false;
+            }
+            
+            if (isStandaloneWord) {
+                occurrences++;
+            }
+            
             index += tempWord.length();
         }
         return occurrences;
     }
-    
     void mergeSort(ArrayList<TextFileDetails> textFileDetailsContainer) {
         int inputLength = textFileDetailsContainer.size();
 
