@@ -16,46 +16,52 @@ import java.util.ArrayList;
 
 public class SearchBar extends JPanel {
 
-    JTextField textfield = new JTextField();
+    private JTextField textfield = new JTextField();
     private ArrayList<String> currentPathToFolder;
     private JTextArea textArea;
+    private static final int THRESHOLD = 20; // Used to decide sorting method based on list size
 
-    SearchBar(ArrayList<String> currentPathToFolder,JTextArea textArea) {
+    // Define constants for appearance
+    private static final Color BACKGROUND_COLOR = new Color(0x212121);
+    private static final Dimension TEXT_FIELD_DIMENSION = new Dimension(400, 25);
+    private static final Color TEXT_FIELD_COLOR = new Color(0x272727);
+    private static final Color TEXT_COLOR = new Color(0xFFFFFF);
+    private static final Font TEXT_FONT = new Font("Consolas", Font.PLAIN, 20);
+
+    /**
+     * Constructor for the SearchBar.
+     * @param currentPathToFolder A list of paths to folders to search within.
+     * @param textArea The JTextArea where search results will be displayed.
+     */
+    public SearchBar(ArrayList<String> currentPathToFolder, JTextArea textArea) {
         setCurrentPathToFolder(currentPathToFolder);
         setTextArea(textArea);
-        this.setBackground(new Color(0x212121));
+        
+        this.setBackground(BACKGROUND_COLOR);
         this.setPreferredSize(new Dimension(0, 20));
         this.setLayout(new FlowLayout());
 
-        textfield.setPreferredSize(new Dimension(400,25));
+        textfield.setPreferredSize(TEXT_FIELD_DIMENSION);
         textfield.setBorder(null);
-        textfield.setFont(new Font("Consolas", Font.PLAIN, 20));
-        textfield.setForeground(new Color(0xFFFFFF));
-        textfield.setBackground(new Color(0x272727));
-        textfield.setCaretColor(new Color(0xFFFFFF));
-        textfield.setSelectionColor((new Color(0xFFFFFF)));
+        textfield.setFont(TEXT_FONT);
+        textfield.setForeground(TEXT_COLOR);
+        textfield.setBackground(TEXT_FIELD_COLOR);
+        textfield.setCaretColor(TEXT_COLOR);
+        textfield.setSelectionColor(TEXT_COLOR);
 
-        // Add an action listener to the textfield
+        // Add an ActionListener to perform the search when the user presses Enter
         textfield.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (currentPathToFolder.isEmpty()) {
-                    textArea.setText("Select a Folder!");
-                    return;
-                }
-                if (textfield.getText().isEmpty()) {
-                    return;
-                } 
-                searchForWord();
-
-                // Clear the textfield for new input
-                textfield.setText("");
+                performSearch();
+                textfield.setText(""); // Clear the textfield for new input after search
             }
         });
+        
         this.add(textfield);
     }
 
-    void searchForWord() {
+    void performSearch() {
         // absolute path to the folder
         String folderPath = currentPathToFolder.get(currentPathToFolder.size() - 1);
 
@@ -97,7 +103,14 @@ public class SearchBar extends JPanel {
                 e.printStackTrace();
             }
         }
-        mergeSort(textFileDetailsContainer);
+        if (textFileDetailsContainer.size() < 20) {
+            insertionSort(textFileDetailsContainer);
+            System.out.println("Insertion Sort");
+        }
+        else {
+            mergeSort(textFileDetailsContainer);
+            System.out.println("Merge Sort");
+        }
         displayToTextArea(textFileDetailsContainer, textArea, overallOccurence);
         for (TextFileDetails textFile : textFileDetailsContainer) {
             System.out.println(textFile.getFileName());
@@ -194,6 +207,19 @@ public class SearchBar extends JPanel {
         }
     }
 
+    void insertionSort(ArrayList<TextFileDetails> textFileDetailsContainer) {
+        for (int i = 1; i < textFileDetailsContainer.size(); i++) {
+            TextFileDetails currentValue = textFileDetailsContainer.get(i);
+
+            int j = i - 1;
+            while (j >= 0 && textFileDetailsContainer.get(j).getStandaloneOccurances() > currentValue.getStandaloneOccurances()) {
+                textFileDetailsContainer.set(j + 1, textFileDetailsContainer.get(j));
+                j--;
+            }
+            textFileDetailsContainer.set(j + 1, currentValue);
+        }
+    }
+
     double occurencePercentage(int occurence, int totalOccurence) {
         if (occurence == 0 || totalOccurence == 0) {return 0;}
         double totalItems = occurence;
@@ -217,6 +243,7 @@ public class SearchBar extends JPanel {
         textArea.append("\n\n"+ "Total Occurences: " + overallOccurence);
     }
 
+    // Getters and Setters.
     public ArrayList<String> getCurrentPathToFolder() {
         return currentPathToFolder;
     }
@@ -232,4 +259,9 @@ public class SearchBar extends JPanel {
     public JTextArea getTextArea() {
         return textArea;
     }
+    
+    public int getThereshold() {
+        return THRESHOLD;
+    }
+
 }
