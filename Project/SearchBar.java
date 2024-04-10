@@ -212,7 +212,7 @@ public class SearchBar extends JPanel {
             TextFileDetails currentValue = textFileDetailsContainer.get(i);
 
             int j = i - 1;
-            while (j >= 0 && textFileDetailsContainer.get(j).getStandaloneOccurances() > currentValue.getStandaloneOccurances()) {
+            while (j >= 0 && textFileDetailsContainer.get(j).getStandaloneOccurances() < currentValue.getStandaloneOccurances()) {
                 textFileDetailsContainer.set(j + 1, textFileDetailsContainer.get(j));
                 j--;
             }
