@@ -47,11 +47,11 @@ public class SelectFolder extends JButton implements MouseListener {
         // Add the selected directory's path to currentPathToFolder if approved
         if (response == JFileChooser.APPROVE_OPTION) {
             File folder = fileChooser.getSelectedFile();
-            System.out.println("Selected folder: " + folder.getAbsolutePath());
+            //System.out.println("Selected folder: " + folder.getAbsolutePath());
             currentPathToFolder.add(folder.getAbsolutePath());
-        } else {
+        } /*else {
             System.out.println("No folder selected.");
-        }
+        }*/
     }
 
     // Change background color when the button is pressed

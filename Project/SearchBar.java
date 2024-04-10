@@ -87,7 +87,7 @@ public class SearchBar extends JPanel {
             // Check if the file is a text file
             if (!(file.isFile())) { continue; }
         
-            System.out.println("Opening file: " + file.getName());
+            //System.out.println("Opening file: " + file.getName());
             TextFileDetails textFileDetails = new TextFileDetails();
             textFileDetailsContainer.add(textFileDetails);
             textFileDetails.setFileName(file.getName());
@@ -96,7 +96,7 @@ public class SearchBar extends JPanel {
                 // Read the entire file content as a string
                 String content = new String(Files.readAllBytes(Paths.get(file.getPath())), StandardCharsets.UTF_8);
                 int occurrences = countOccurrences(content, textfield.getText());
-                System.out.printf("File: %s: %d total occurrence(s) of '%s'%n", file.getName(), occurrences, textfield.getText());
+                //System.out.printf("File: %s: %d total occurrence(s) of '%s'%n", file.getName(), occurrences, textfield.getText());
                 textFileDetails.setStandaloneOccurances(occurrences);
                 overallOccurence += occurrences;
             } catch (IOException e) {
@@ -105,21 +105,21 @@ public class SearchBar extends JPanel {
         }
         if (textFileDetailsContainer.size() < 20) {
             insertionSort(textFileDetailsContainer);
-            System.out.println("Insertion Sort");
+            //System.out.println("Insertion Sort");
         }
         else {
             mergeSort(textFileDetailsContainer);
-            System.out.println("Merge Sort");
+            //System.out.println("Merge Sort");
         }
         displayToTextArea(textFileDetailsContainer, textArea, overallOccurence);
-        for (TextFileDetails textFile : textFileDetailsContainer) {
+        /*for (TextFileDetails textFile : textFileDetailsContainer) {
             System.out.println(textFile.getFileName());
             System.out.println(textFile.getStandaloneOccurances());
             if (occurencePercentage(textFile.getStandaloneOccurances(), overallOccurence) != 0) {
                 System.out.println(occurencePercentage(textFile.getStandaloneOccurances(), overallOccurence));
             }
         }
-        System.out.println("Overall Occurence: " + overallOccurence);
+        System.out.println("Overall Occurence: " + overallOccurence);*/
     }
 
     private static int countOccurrences(String line, String word_or_phrase) {
