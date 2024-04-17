@@ -1,6 +1,8 @@
 # Search Sphere
 
-## Project Overview
+![image](https://github.com/DenisBajgora/SearchSphere_repo/assets/124717960/f11a65d6-b9bd-46f9-a79a-0d708666dd09)
+
+### Project Overview
 
 Search Sphere is a Java-based desktop application designed to facilitate file and text management tasks. The application features a user-friendly graphical user interface (GUI) built using Java Swing. It allows users to search within text files, save outputs, and manage file directories efficiently.
 
@@ -55,11 +57,11 @@ Resizable Text Areas: Users can adjust the size of text areas to accommodate dif
 
 # Future Enhancements
 
-## Polymorphism
+### Polymorphism
 
 If more time were available, I would integrate polymorphism to streamline actions across different types of user interactions. For example, an interface Actionable could be implemented by all button classes (Clear, Save, Select Folder) to abstract the action performed, making the system more modular and easier to extend.
 
-## Multi-threading
+### Multi-threading
 
 Another enhancement would be the addition of multi-threading to improve performance, especially when handling large files or performing long-running searches. This could prevent the GUI from freezing and improve user experience by allowing simultaneous execution of tasks such as searching in one thread and updating the GUI in another.
 
