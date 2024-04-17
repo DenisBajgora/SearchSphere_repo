@@ -46,7 +46,7 @@ Text Search: Users can search for specific terms within text files located in se
 
 File Saving: Text output visible in the application can be saved directly from the GUI to a chosen location.
 
-Directory Selection: Users can specify the folder to search in or save files to.
+Directory Selection(Search Space): Users can specify the folder to search in or save files to.
 
 Mutli File Support: Users that can specify a folder with different file extenstions and as long as those files contain text it will open and read it. 
 
@@ -68,9 +68,9 @@ GUI Design: The GUI is simple yet clean with a beautiful dark background. Search
 
 ### Polymorphism
 
-If more time were available, I would integrate polymorphism to streamline actions across different types of user interactions. For example, an interface Actionable could be implemented by all button classes (Clear, Save, Select Folder) to abstract the action performed, making the system more modular and easier to extend.
+If more time were available, I would integrate polymorphism to handl euser actions through a single interface,enabling the application to execute different actions dynamically at runtime depending on the object type, without needing to know the exact class of the objects.
 
-### Multi-threading
+### Multi-Threading
 
 Another enhancement would be the addition of multi-threading to improve performance, especially when handling large files or performing long-running searches. This could prevent the GUI from freezing and improve user experience by allowing simultaneous execution of tasks such as searching in one thread and updating the GUI in another.
 
