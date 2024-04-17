@@ -1,3 +1,14 @@
+/*
+ *  Author: Denis Bajgora
+ *  Date: 17/04/24
+ *  Description:
+ * 
+ * Extending BasicScrollBarUI, the CustomScrollBarUI class is a customised Java Swing scrollbar
+ * that is used to construct unique scrollbars with distinct colours for the track and thumb sections. The class overrides a number of techniques to hide the normal raise
+ * and decrease buttons and paint the thumb and track in user-defined colours for a simple, visually cohesive 
+ * design.
+ */
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;

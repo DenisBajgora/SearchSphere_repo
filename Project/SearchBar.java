@@ -1,3 +1,25 @@
+/*
+ *  Author: Denis Bajgora
+ *  Date: 17/04/24
+ *  Description:
+ * 
+ * The purpose of the SearchBar class, which is an extension of JPanel, is to make 
+ * searching easier within Java Swing applications. It has two features: a JTextArea 
+ * to show search results and a JTextField for user input. This panel controls search 
+ * activities across designated directory paths and shows search word occurrences and 
+ * file names as results.
+ * 
+ * Upon starting a search, the class goes through the text files in the assigned folder, 
+ * counts the times the search word appears, and then arranges the results according to 
+ * frequency. Sorting is dynamic; a threshold of 20 is used to optimise merge sort for 
+ * larger datasets and insertion sort for smaller ones. The results are then shown as a 
+ * percentage and in the text field. 
+ * 
+ * The SearchBar's design is customised with a dark grey backdrop, a text field in the same colour scheme, and text in the 
+ * white Consolas typeface. Applications that need to search files must have this panel, 
+ * especially ones that deal with a lot of text data.
+ */
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -53,6 +75,13 @@ public class SearchBar extends JPanel {
         textfield.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (currentPathToFolder.isEmpty()) {
+                    textArea.setText("Select a Folder!");
+                    return;
+                }
+                if (textfield.getText().isEmpty()) {
+                    return;
+                }
                 performSearch();
                 textfield.setText(""); // Clear the textfield for new input after search
             }

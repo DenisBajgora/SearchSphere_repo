@@ -1,3 +1,16 @@
+/*
+ *  Author: Denis Bajgora
+ *  Date: 17/04/24
+ *  Description:
+ *
+ * The SelectFolder class is a Java Swing application user interface component that 
+ * extends JButton and implements MouseListener to allow folder selection. This button, 
+ * which opens a directory chooser dialogue when pressed, is specifically made for directory 
+ * selection. Only directory paths are allowed, and they must be appended to an ArrayList 
+ * of strings that represents the current path to the chosen folder.
+ * 
+ */
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;

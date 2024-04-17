@@ -1,3 +1,15 @@
+/*
+ *  Author: Denis Bajgora
+ *  Date: 17/04/24
+ *  Description:
+ * 
+ * MainPanel class extends JPanel. With a Header at the top, a SearchBar in the middle, 
+ * and an InteractionPanel at the bottom, it is set up to oversee three different subpanels.
+ * The Header provides branding, the SearchBar allows user input for searches, and the 
+ * InteractionPanel has buttons for actions like deleting text, storing output, and 
+ * choosing folders. Each subpanel is designed to carry out a certain task.
+ */
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;

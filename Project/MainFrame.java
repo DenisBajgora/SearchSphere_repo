@@ -1,3 +1,15 @@
+/*
+ *  Author: Denis Bajgora
+ *  Date: 17/04/24
+ *  Description:
+ * 
+ * The "Search Sphere V1.0" main window is created by the MainFrame class, which is an 
+ * extension of JFrame. The application's graphical user interface, which consists of a
+ * main panel for navigation, a centre panel for content display, and a footer with 
+ * copyright information, is put up by this class. The frame has a custom 
+ * application icon and a dark grey background.
+ */
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.ImageIcon;

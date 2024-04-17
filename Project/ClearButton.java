@@ -1,3 +1,15 @@
+/*
+ *  Author: Denis Bajgora
+ *  Date: 17/04/24
+ *  Description:
+ * 
+ * The ClearButton class makes a custom button that is intended to clear the contents of a
+ * JTextArea by extending JButton and implementing MouseListener. This button is set up with
+ * a non-editable text box as its target and a simple black look. It has visual 
+ * feedback that changes colour in response to mouse actions, including hover, press, 
+ * and release.
+ */
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;

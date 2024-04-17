@@ -1,3 +1,15 @@
+/*
+ *  Author: Denis Bajgora
+ *  Date: 17/04/24
+ *  Description:
+ * 
+ * the Header class extends JPanel to produce a visually appealing header. 
+ * It includes a centralised JLabel with the title "Search Sphere" and a corresponding
+ * sphere icon, created especially to symbolise application branding. The header uses
+ * a large, readable Consolas font with a dark grey background and white lettering. 
+ * There is a large space between the text and the icon in this design. 
+ */
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;

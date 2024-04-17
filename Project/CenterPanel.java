@@ -1,3 +1,15 @@
+/*
+ *  Author: Denis Bajgora
+ *  Date: 17/04/24
+ *  Description:
+ * 
+ * The CenterPanel class extends JPanel. It has a scrollable text display area that is provided by a JTextArea inside of a JScrollPane.
+ * This class is set up with a dark theme, personalised scroll bars, and unique text area colours 
+ * and fonts. Since the text section is not editable, it can be used to display logs or text output.
+ * To ensure a pleasing layout, this class additionally includes a FlowLayout to centre
+ * the scroll pane within the panel.
+ */
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;

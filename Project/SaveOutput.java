@@ -1,3 +1,16 @@
+/*
+ *  Author: Denis Bajgora
+ *  Date: 17/04/24
+ *  Description:
+ * 
+ * The SaveOutput class creates a specialised button for saving text content from a 
+ * JTextArea to a file by extending JButton and implementing MouseListener. By offering 
+ * visual feedback during interactions—such as altering the backdrop colour when hovered 
+ * over or pressed—this class improves the user experience. The button emphasises simplicity
+ * and clarity with its dark grey backdrop, bright green hover text, and darker green 
+ * pressed text.
+ */
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;

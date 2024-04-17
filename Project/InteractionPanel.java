@@ -1,3 +1,14 @@
+/*
+ *  Author: Denis Bajgora
+ *  Date: 17/04/24
+ *  Description:
+ * 
+ * Three custom buttons are included into this panel: SelectFolder to select a directory 
+ * for file saving, SaveOutput to save the contents of the text area, and ClearButton to 
+ * clear text from a JTextArea. With a dark grey backdrop and a desired height of 60 pixels.
+ * The FlowLayout provides horizontal and vertical gaps to guarantee proper button spacing.
+ */
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;

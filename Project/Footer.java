@@ -1,3 +1,14 @@
+/*
+ *  Author: Denis Bajgora
+ *  Date: 17/04/24
+ *  Description:
+ * 
+ * This footer class extends JPannel. It has a single, basic JLabel with a customisable copyright text shown on it. 
+ * The panel features a dark grey backdrop with text centred in the footer, all 
+ * in a minimalistic design. With this setting, copyright information is visible 
+ * and easily distinguishable.
+ */
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
