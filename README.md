@@ -48,12 +48,21 @@ File Saving: Text output visible in the application can be saved directly from t
 
 Directory Selection: Users can specify the folder to search in or save files to.
 
+Mutli File Support: Users that can specify a folder with different file extenstions and as long as those files contain text it will open and read it. 
+
+Phrase Support: Users can enter words like "Christmas Day" and it will search for that exact phrase.
+
+Non-Case-Senstive: Search Sphere will search for the same word regardless if the word is upper case or not. 
+
+Ranking Mechanism: File that contains the highest occurence of a word/phrase will be returned first and the least will be returned last along with a calucation match (%).
 
 # Optional Functionality
 
 Visual Feedback for Button Interactions: Buttons change color on hover and when clicked, providing clear visual cues to users.
 
 Resizable Text Areas: Users can adjust the size of text areas to accommodate different volumes of text. 
+
+GUI Design: The GUI is simple yet clean with a beautiful dark background. Search Sphere makes gives Users a clear indication where to input text. 
 
 # Future Enhancements
 
