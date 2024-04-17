@@ -1,6 +1,7 @@
 # Search Sphere
 
-![image](https://github.com/DenisBajgora/SearchSphere_repo/assets/124717960/f11a65d6-b9bd-46f9-a79a-0d708666dd09)
+![image](https://github.com/DenisBajgora/SearchSphere_repo/assets/124717960/e0b3614d-236d-4a7d-a36e-1dc0689e056e)
+
 
 ### Project Overview
 
