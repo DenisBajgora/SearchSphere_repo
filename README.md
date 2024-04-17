@@ -1,10 +1,13 @@
 # Search Sphere
 
-# Project Overview
+## Project Overview
 
 Search Sphere is a Java-based desktop application designed to facilitate file and text management tasks. The application features a user-friendly graphical user interface (GUI) built using Java Swing. It allows users to search within text files, save outputs, and manage file directories efficiently.
 
 # List of Classes
+
+Main: The entry point of the application, responsible for launching the main window by creating an instance of MainFrame.
+
 
 MainFrame: Sets up the main window of the application, including layout and initialization of all panels.
 
