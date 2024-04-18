@@ -76,6 +76,4 @@ If more time were available, I would integrate polymorphism to handl euser actio
 Another enhancement would be the addition of multi-threading to improve performance, especially when handling large files or performing long-running searches. This could prevent the GUI from freezing and improve user experience by allowing simultaneous execution of tasks such as searching in one thread and updating the GUI in another.
 
 
-Watch my showcase of Search Sphere on Youtube!
-
 
