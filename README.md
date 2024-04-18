@@ -69,7 +69,7 @@ Search Sphere is a Java-based desktop application designed to facilitate file an
 
 ### Polymorphism
 
-If more time were available, I would integrate polymorphism to handl euser actions through a single interface,enabling the application to execute different actions dynamically at runtime depending on the object type, without needing to know the exact class of the objects.
+If more time were available, I would integrate polymorphism to handle user actions through a single interface, enabling the application to execute different actions dynamically at runtime depending on the object type, without needing to know the exact class of the objects.
 
 ### Multi-Threading
 
